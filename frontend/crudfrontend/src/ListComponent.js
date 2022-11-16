@@ -1,15 +1,16 @@
-import React from 'react';
-import UserComponent from './UserComponent';
+// import React from 'react';
+// import UserComponent from './UserComponent';
 
 
-export default function ListComponent(){
-    return (
-  <div>
-      <h2>Lista de usuários</h2>
-    <ul>
-        <UserComponent name={"Anderson Lomba"} />
+// export default function ListComponent(props){
+//     return (
+//   <div>
+//       <h2>{props.listName}</h2>
+//     <ul>
+//         <UserComponent name={"Anderson Lomba"} />
+     
 
-    </ul>
-</div>
-    )
-}
+//     </ul>
+// </div>
+//     )
+// }
