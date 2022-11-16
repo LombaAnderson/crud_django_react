@@ -5,10 +5,23 @@ class Financeiro extends React.Component{
 
     constructor(props){
         super(props);
-
-        this.state={
-            financeiro:[]
+        
+        this.state ={
+            cessao_fundos:[
+            
+            ]
         }
+    }
+
+    async componentDidMount(){
+        var url =("http://127.0.0.1:8000/funds/")
+        const response= await fetch(url);
+        const data = await response.json();
+        console.log(data);
+    }
+
+    componentWillUnmount(){
+
     }
 
     render(){

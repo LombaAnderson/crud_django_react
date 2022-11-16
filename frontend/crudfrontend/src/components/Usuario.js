@@ -8,18 +8,20 @@ class Usuario extends React.Component{
         
         this.state ={
             usuarios:[
-              {'id':1, 'cliente':'Anderson', 'documento':'0789324912','endereco':'Rua Depto Newton Moura',
-               'cep':'40220870', 'cidade': 'Salvador', 'uf': 'BA' }
+            
             ]
         }
     }
 
-    componentDidMount(){
-
+    async componentDidMount(){
+        var url =("http://127.0.0.1:8000/user/")
+        const response= await fetch(url);
+        const data = await response.json();
+        console.log(data);
     }
 
     componentWillUnmount(){
-        
+
     }
 
 
