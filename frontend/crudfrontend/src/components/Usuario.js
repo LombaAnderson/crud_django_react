@@ -5,10 +5,21 @@ class Usuario extends React.Component{
 
     constructor(props){
         super(props);
-
-        this.state={
-            usuarios:[]
+        
+        this.state ={
+            usuarios:[
+              {'id':1, 'cliente':'Anderson', 'documento':'0789324912','endereco':'Rua Depto Newton Moura',
+               'cep':'40220870', 'cidade': 'Salvador', 'uf': 'BA' }
+            ]
         }
+    }
+
+    componentDidMount(){
+
+    }
+
+    componentWillUnmount(){
+        
     }
 
 
