@@ -2,8 +2,9 @@ import Home from './components/Home';
 import Usuario from './components/Usuario';
 import Edicao from './components/Edicao';
 import Remocao from './components/Remocao';
-import {BrowserRouter, Link,Route, Switch} from 'react-router-dom'
+import {BrowserRouter, Link, Route, Routes} from 'react-router-dom'
 import {Nav}  from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
@@ -18,12 +19,13 @@ function App() {
      <Nav.Link as={Link} to="/remocao">Deletar Usuário</Nav.Link>
      </Nav>
 
-     <Switch>
+     <Routes>
       <Route path="/" element={<Home/>}></Route>
       <Route path="/usuarios" element={<Usuario/>}></Route>
       <Route path="/edicao" element={<Edicao/>}></Route>
       <Route path="/remocao" element={<Remocao/>}></Route>
-      </Switch>
+      </Routes>
+
      </BrowserRouter>
     </div>
   );
