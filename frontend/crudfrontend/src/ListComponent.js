@@ -1,4 +1,5 @@
 import React from 'react';
+import UserComponent from './UserComponent';
 
 
 export default function ListComponent(){
@@ -6,8 +7,7 @@ export default function ListComponent(){
   <div>
       <h2>Lista de usuários</h2>
     <ul>
-        <li>Anderson Lomba</li>
-        <li>Josias Ferreira</li>
+        <UserComponent name={"Anderson Lomba"} />
 
     </ul>
 </div>
