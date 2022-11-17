@@ -12,4 +12,4 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 class FundsSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Funds
-        fields = ['cliente', 'url']
+        fields = ['valor_do_emprestimo', 'url']

@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-o8y*g5*drie#1&0yc45p@q65z=8er1%rl#cxf3qzvujfe=068m'
+SECRET_KEY = 'django-insecure-7r%hqeeos$d1ot%+(890e1f0(j+yujczqxy788*u^c5jqu@bdi'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework.authtoken',
-    'corsheaders',
+     'corsheaders',
     #app
     'crudbackend',
     'userlist',
@@ -54,8 +54,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-   
-
 ]
 
 ROOT_URLCONF = 'setup.urls'
@@ -126,6 +124,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+
 CORS_ORIGIN_WHITELIST = [
     # "https://fakestoreapi.com/docs",
     "http://localhost:3000",
@@ -136,3 +135,10 @@ CORS_ORIGIN_WHITELIST = [
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+REST_FRAMEWORK = {
+    'DATE_FORMAT': "%d/%m/%Y",
+    'DATE_INPUT_FORMATS': ["%d-%m-%Y"],
+}
+
+DATE_INPUT_FORMATS = ['%d/%m/%Y']

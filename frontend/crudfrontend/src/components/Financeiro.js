@@ -7,7 +7,7 @@ class Financeiro extends React.Component{
         super(props);
         
         this.state ={
-            cessao_fundos:[
+            financeiro:[
             
             ]
         }
