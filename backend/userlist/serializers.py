@@ -1,4 +1,4 @@
-from .models import Funds, User
+from .models import  User
 from rest_framework import serializers
 
 
@@ -6,10 +6,4 @@ from rest_framework import serializers
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User
-        fields = ['cliente']
-
-
-class FundsSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = Funds
-        fields = ['valor_do_emprestimo', 'url']
+        fields = ['cliente', 'documento','valor_do_emprestimo ', 'total_parcelas', 'data_de_emissao', 'data_de_vencimento']

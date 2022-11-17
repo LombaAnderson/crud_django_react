@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-7r%hqeeos$d1ot%+(890e1f0(j+yujczqxy788*u^c5jqu@bdi'
+SECRET_KEY = 'django-insecure-8^-^1e7%mh&2h&=(_t5r*a56^an04!ea&0y6ck*y&@4w3q^brv'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -122,23 +122,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
-
-
 CORS_ORIGIN_WHITELIST = [
     # "https://fakestoreapi.com/docs",
     "http://localhost:3000",
     "http://127.0.0.1:3000"
 ]
 
+STATIC_URL = 'static/'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-REST_FRAMEWORK = {
-    'DATE_FORMAT': "%d/%m/%Y",
-    'DATE_INPUT_FORMATS': ["%d-%m-%Y"],
-}
-
-DATE_INPUT_FORMATS = ['%d/%m/%Y']

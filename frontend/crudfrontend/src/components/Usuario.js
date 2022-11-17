@@ -1,6 +1,6 @@
 import React from "react"
-import {Table} from "react-bootstrap";
-import { ThemeConsumer } from "react-bootstrap/esm/ThemeProvider";
+import {Button, Table} from "react-bootstrap";
+
 
 class Usuario extends React.Component{
 
@@ -8,39 +8,18 @@ class Usuario extends React.Component{
         super(props);
         
         this.state ={
-            usuarios:[
-            
-            ]
+            usuarios:[]
         }
     }
 
     async componentDidMount(){
-        
-    }
-
-    componentWillUnmount(){
-
-    }
-
-    async buscarUsuario(){
         var url =("http://127.0.0.1:8000/user/")
         const response= await fetch(url);
         const data = await response.json();
- 
+        console.log(data);
     }
-
-    async deletarUsuario(id){
-        var url =("http://127.0.0.1:8000/user/" +id, {method: 'DELETE'})
-        .then(response => {
-                if(response.ok){
-                    this.buscarUsuario();
-                }
-            })
-        }
-             
-    }
-
-
+        
+            
     render(){
         return  (
             <Table striped bordered hover>
@@ -52,7 +31,12 @@ class Usuario extends React.Component{
                     <td>CEP</td>
                     <td>Cidade</td>
                     <td>UF</td>
-            
+                    <td>Valor do Emprestimo</td>
+                    <td>Valor da Parcela</td>
+                    <td>Parcela</td>
+                    <td>Data de Emissão</td>
+                    <td>Data de Vencimento</td>
+                    <td>Preço de Aquisição</td>    
                     <th>Opções</th>
                     </tr>
                 </thead>
@@ -64,7 +48,13 @@ class Usuario extends React.Component{
                         <td>40220870</td>
                         <td>Salvador</td>
                         <td>BA</td>
-                        <td>Editar Excluir</td>
+                        <td>R$ 77.000,00</td>
+                        <td>R$ 777,00 </td>
+                        <td>77</td>
+                        <td>15/11/2022</td>
+                        <td>15/11/2027</td>
+                        <td>R$ 77.000,00</td> 
+                        <td>Atualizar <Button variant="danger" onClick={() => this.deletarUsuario()}>Excluir</Button></td>
                     </tr>
                     <tr>
                         <td>Josias Ferreira</td>
@@ -73,13 +63,19 @@ class Usuario extends React.Component{
                         <td>20220870</td>
                         <td>Rio de Janeiro</td>
                         <td>RJ</td>
-                        <td>Editar Excluir</td>
+                        <td>R$ 78.000,00</td>
+                        <td>R$ 777,00 </td>
+                        <td>77</td>
+                        <td>15/11/2022</td>
+                        <td>15/11/2027</td>
+                        <td>R$ 79.000,00</td> 
+                        <td>Atualizar <Button variant="danger" onClick={() => this.deletarUsuario()}>Excluir</Button></td>
                     </tr>
                 </tbody>
             </Table>
         )
     }
-    }
 
+}
 
 export default Usuario;

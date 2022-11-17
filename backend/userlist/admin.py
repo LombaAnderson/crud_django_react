@@ -1,5 +1,4 @@
 from django.contrib import admin
-from userlist.models import Funds, User
+from userlist.models import  User
 
-admin.site.register(Funds)
 admin.site.register(User)

@@ -2,12 +2,11 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 from crudbackend.views import UserViewSet, GroupViewSet
-from userlist.views import FundsViewSet, UserViewSet
+from userlist.views import UserViewSet
 
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
 router.register(r'groups', GroupViewSet)
-router.register(r'funds', FundsViewSet)
 router.register(r'user', UserViewSet)
 
 urlpatterns = [
