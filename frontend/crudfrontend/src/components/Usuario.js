@@ -1,25 +1,25 @@
 import React from "react"
 import {Button, Table} from "react-bootstrap";
 
-
 class Usuario extends React.Component{
-
-    constructor(props){
-        super(props);
-        
-        this.state ={
-            usuarios:[]
-        }
-    }
+       state = {usuarios: null, loading: true}
 
     async componentDidMount(){
+      const config = {
+        headers:{
+            'Content-Type': 'application/json'
+        }
+      }
+      config.headers['Authorization'] = 'Token ad2cab2367d8078b29d0ac9fa0382616894061b9'
+
+
         var url =("http://127.0.0.1:8000/user/")
-        const response= await fetch(url);
+        const response= await fetch(url, config);
         const data = await response.json();
         console.log(data);
+        this.setState({usuarios: data, loading: false});
     }
-        
-            
+                   
     render(){
         return  (
             <Table striped bordered hover>
