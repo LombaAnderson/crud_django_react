@@ -15,10 +15,10 @@ class User(models.Model):
     
 
 class Funds(models.Model):
-    valor_do_emprestimo = models.DecimalField(max_digits=10.2, decimal_places=2, default=False, null=False)
-    valor_parcela = models.DecimalField(max_digits=10.2, decimal_places=2, default=False, null=False)
+    valor_do_emprestimo = models.DecimalField(max_digits=10, decimal_places=False, default=False, null=False)
+    valor_parcela = models.DecimalField(max_digits=10, decimal_places=False, default=False, null=False)
     total_parcelas= models.IntegerField( default=True, null=False)
     parcela = models.IntegerField( default=True, null=False)
     data_de_emissao = models.DateField(default=True)
     data_de_vencimento = models.DateField(default=True)
-    preco_aquisicao = models.DecimalField(max_digits=10.2, decimal_places=2, default=False, null=False)
+    preco_aquisicao = models.DecimalField(max_digits=10, decimal_places=False, default=False, null=False)
