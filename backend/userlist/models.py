@@ -22,3 +22,6 @@ class Funds(models.Model):
     data_de_emissao = models.DateField(default=True)
     data_de_vencimento = models.DateField(default=True)
     preco_aquisicao = models.DecimalField(max_digits=10, decimal_places=False, default=False, null=False)
+
+    def __str__(self):
+     return self.cliente

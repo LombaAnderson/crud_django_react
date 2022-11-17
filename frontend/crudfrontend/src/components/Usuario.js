@@ -1,5 +1,6 @@
 import React from "react"
 import {Table} from "react-bootstrap";
+import { ThemeConsumer } from "react-bootstrap/esm/ThemeProvider";
 
 class Usuario extends React.Component{
 
@@ -14,14 +15,29 @@ class Usuario extends React.Component{
     }
 
     async componentDidMount(){
-        var url =("http://127.0.0.1:8000/user/")
-        const response= await fetch(url);
-        const data = await response.json();
-        console.log(data);
+        
     }
 
     componentWillUnmount(){
 
+    }
+
+    async buscarUsuario(){
+        var url =("http://127.0.0.1:8000/user/")
+        const response= await fetch(url);
+        const data = await response.json();
+ 
+    }
+
+    async deletarUsuario(id){
+        var url =("http://127.0.0.1:8000/user/" +id, {method: 'DELETE'})
+        .then(response => {
+                if(response.ok){
+                    this.buscarUsuario();
+                }
+            })
+        }
+             
     }
 
 
