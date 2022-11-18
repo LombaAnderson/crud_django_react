@@ -2,7 +2,7 @@ import React from "react"
 import {Button, Table} from "react-bootstrap";
 
 class Usuario extends React.Component{
-       state = {usuarios: null, loading: true}
+       state = {usuarios: [], loading: true}
 
     async componentDidMount(){
       const config = {
@@ -21,6 +21,8 @@ class Usuario extends React.Component{
     }
                    
     render(){
+
+        const usuariosApi = this.state.usuarios;
         return  (
             <Table striped bordered hover>
                 <thead>
@@ -72,6 +74,7 @@ class Usuario extends React.Component{
                         <td>Atualizar <Button variant="danger" onClick={() => this.deletarUsuario()}>Excluir</Button></td>
                     </tr>
                 </tbody>
+            
             </Table>
         )
     }
